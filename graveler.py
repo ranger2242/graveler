@@ -22,13 +22,13 @@ def proc(inst):
     runs = 0
     start = time.time()
     while True:
-        flips = 0
-        while rn.randint(1, 2) == 1: flips += 1
+        rolls = 0
+        while rn.randint(1, 4) == 1: rolls += 1
         runs += 1
-        if flips >= max:
-            max = flips
-            print(f'{color(inst, clrs[inst])}:\t\t{flips}:\t\t({int(time.time() - start)}s):\t\t{runs:n}')
-        if max >= 177:
+        if rolls >= max:
+            max = rolls
+            print(f'{color(inst, clrs[inst])}:\t\t{rolls}:\t\t({int(time.time() - start)}s):\t\t{runs:n}')
+        if max >= 177 or runs==1000000000:
             print(time.time() - start)
             exit()
 
